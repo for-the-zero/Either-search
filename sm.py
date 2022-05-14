@@ -15,9 +15,9 @@ def google():
 		if get == 'error':
 			del all_e['google']
 		else:
-			all_e['google'] = [get[0]('/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[*]/div/div[1]/div/a/@href')]
+			all_e['google'] = get[0]('/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[*]/div/div[1]/div/a/@href')
 	else:
-		all_e['google'] = [get[0]('/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[*]/div/div[1]/div/a/@href')]
+		all_e['google'] = get[0]('/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[*]/div/div[1]/div/a/@href')
 def bing():
 	global s
 	global all_e
@@ -25,7 +25,7 @@ def bing():
 	if get == 'error':
 		del all_e['bing']
 	else:
-		all_e['bing'] = [get[0]('//*[@id="b_results"]/li[*]/div[1]/h2/a/@href')]
+		all_e['bing'] = get[0]('//*[@id="b_results"]/li[*]/div[1]/h2/a/@href')
 def qwant():
 	global s
 	global all_e
@@ -33,7 +33,7 @@ def qwant():
 	if get == 'error':
 		del all_e['qwant']
 	else:
-		all_e['qwant'] = [get[0]('//*[@id="root"]/div[2]/div[3]/div[1]/div[2]/section/div[1]/div/div/div[*]/div[2]/div[1]/a/@href')]
+		all_e['qwant'] = get[0]('//*[@id="root"]/div[2]/div[3]/div[1]/div[2]/section/div[1]/div/div/div[*]/div[2]/div[1]/a/@href')
 
 
 def get_all(q):
@@ -55,15 +55,3 @@ def get_all(q):
 		if j == len(all_e):
 			break
 	return all_e
-	'''
-	google()
-	print(all_e)
-	bing()
-	print(all_e)
-	qwant()
-	print(all_e)
-	return all_e
-	'''
-
-
-#input(get_all('hello'))
